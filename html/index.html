@@ -1,0 +1,367 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>e-Yantra's Task Documentation! &#8212; e-Yantra's Task Documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scripts" href="modules.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="scripts"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">e-Yantra's Task Documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-task5-s-documentation">
+<h1>e-Yantra's Task Documentation!<a class="headerlink" href="#welcome-to-task5-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="action_client.html">action_client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera_class.html">camera_class module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node_action_server_ros_iot_bridge.html">node_action_server_ros_iot_bridge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order_data.html">order_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyiot.html">pyiot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task5_solution.html">task5_solution module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ur5_classes.html">ur5_classes module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Our Theme is “Vargi Bots”. Inspired by the visualisation of Industry 4.0, Vargi is taken from a Sanskrit word, Vargikaran (वर्गीकरण) which means to separate objects based on their category.
+The arena is an automated warehouse setting where essential packages are required to be sent out to different cities or different parts of a city. Since Industry 4.0 heavily focuses on automation here the warehouse only consists of two industrial robotics arms which are going to be used. As the requirements are sent to the warehouse, one robotic arm will identify the packages from a shelf and place them on a conveyor belt and the other robotic arm at the end of the conveyor belt will pick these objects from the conveyor and place them into the bins. Each bin represents a priority level, red bin for “High Priority (HP)”, yellow bin for “Medium Priority (MP)” &amp; green bin for “Low Priority (LP)”. As the packages are sent out from the warehouse there will also be alerts sent to the user via email notifying them about the package being dispatched &amp; shipped from the warehouse. The packages to be delivered have their own priorities. Packages having a higher priority are intended for a natural disaster or a pandemic situation. Other packages with lower priorities are for general purposes. Similar to a conductor in an orchestra, we have designed our own conductor for the warehouse to make smart decisions in order to deliver high priority packages as quickly as possible.</p>
+</div>
+<div class="section" id="implementation">
+<h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt><strong>Packages Used</strong> :</dt>
+<dd><ol class="first arabic simple">
+<li><strong>pkg_task5</strong> = This package contains all the nodes and msg, config files that are required for the implementation for the Vargi Bots theme(Warehouse Automation).</li>
+</ol>
+<div class="figure align-center">
+<img alt="_images/task5.png" src="_images/task5.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>pkg_ros_iot_bridge</strong> : This package contains all the nodes and msg,config files that are required for the MQTT communication and invoking the action server that will receive goals from action clients and will process them.</li>
+</ol>
+<div class="figure align-center">
+<img alt="_images/pkg_ros_iot_bridge.png" src="_images/pkg_ros_iot_bridge.png" />
+</div>
+<ol class="last arabic simple" start="3">
+<li><strong>pkg_moveit_ur5_1</strong> : This package is generated by using MoveIt! Setup assistant which will configure MoveIt! for UR51.</li>
+<li><strong>pkg_moveit_ur5_2</strong> : This package is generated by using Moveit! Setup assistant which will configure MoveIt! for UR52</li>
+<li><strong>pkg_vb_sim</strong> : This package contains all the simulation environment that are required for the theme implementation.</li>
+</ol>
+</dd>
+<dt><strong>Topics used</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li><strong>/eyrc/vb/camera_1/image_raw</strong> = This is the topic on which the image taken by 2D camera in the warehouse will be published as image stream. The Image stream received by this topics’ subscription will be converted into an image using CV2 module and after doing image processing the QR codes in the images will be decoded to get information about each of the 12 packages on the shelf in warehouse.(refer camera_class module)</li>
+<li><strong>/eyrc/vb/logical_camera_2</strong> = This topic is used to get the model names that are under logical_camera_2 to stop the conveyor as soon as the package reaches below it so the ur52 can pick the package and place into its proper bin. This functioning is made possible in the function callback of this topics’ subscription in class Ur52 class present in the ur5_classes module.</li>
+<li><strong>/2437/incomingorders/</strong> = (Custom topic) : This topic is used to communicate internally with the nodes to get the incoming orders which is received by action server after the incoming order is being published on the MQTT topic <strong>/eyrc/vb/JjAaHhBb/orders</strong> . The action server will publish the order received on this topic so that other nodes can access this orders’ information</li>
+</ol>
+</dd>
+<dt><strong>Services used</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li><strong>/eyrc/vb/conveyor/set_power</strong> = This service is used for controlling the speed of the conveyor belt. Power ranges between 0-100.</li>
+<li><strong>/eyrc/vb/ur5/activate_vacuum_gripper/ur5_1</strong> = This service is used for activating or deactivating the vaccum gripper of ur51.</li>
+<li><strong>/eyrc/vb/ur5/activate_vacuum_gripper/ur5_2</strong> = This service is used for activating or deactivating the vaccum gripper of ur52</li>
+</ol>
+</dd>
+<dt><strong>MQTT Topic (Default)</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li><strong>/eyrc/vb/JjAaHhBb/orders</strong>: This is the MQTT topic on which orders will be placed after certain intervals (automatic).</li>
+</ol>
+</dd>
+<dt><strong>Action Server used</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li><strong>/action_ros_iot</strong> = This is the action name used by the action server to create action clients that will send goals to this action server.</li>
+</ol>
+</dd>
+<dt><strong>Data structure and Sorting algorithm used for sorting the packages</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li>The concept of priority queues is used to store and sort the packages based on their priority.</li>
+<li><dl class="first docutils">
+<dt>Three priority queues are used :</dt>
+<dd><ul class="first last">
+<li><strong>ORDER_HP</strong> = This list will be storing information regarding the High priority packages</li>
+<li><strong>ORDER_MP</strong> = This list will be storing information regarding the Medium priority packages</li>
+<li><strong>ORDER_LP</strong> = This list will be storing information regarding the Low priority packages</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>The <em>get_order()</em> function will do all the task related to sorting and giving the order of highest priority present at that instance to ur51. First the ORDER_HP list will be checked, if orders is present in the list (queue) then it will pop the order at index 0 and return that order. Else if the list is empty it will check inside ORDER_MP list and in the same manner the ORDER_LP list will be checked. If all the lists are empty it will repeatedly check for each list until an order is received.</li>
+</ol>
+</dd>
+<dt><strong>Nodes used</strong>:</dt>
+<dd><ol class="first last arabic simple">
+<li>node_iot_ros_bridge_action_server</li>
+<li>node_task5_solution</li>
+</ol>
+</dd>
+</dl>
+<p><strong>rqt Graph</strong></p>
+<div class="figure align-center">
+<img alt="_images/rqtgraph.png" src="_images/rqtgraph.png" />
+</div>
+<dl class="docutils">
+<dt><strong>Methodology and Working of nodes</strong>:</dt>
+<dd><ul class="first last">
+<li><p class="first">The gazebo will be launched along with the spreadsheets and HIVE MQTT portal. A new Subscription will be added for the MQTT topic /eyrc/vb/JjAaHhBb/orders on Hive MQTT .
+node_action_server_ros_iot_bridge.py (node_iot_ros_bridge_action_server)</p>
+</li>
+<li><p class="first">This node will invoke the action server to receive goals. The config file used by this action server is (Image)</p>
+</li>
+<li><p class="first">The action server will subscribe to the MQTT topic /eyrc/vb/JjAaHhBb/orders. Once the order will be published on this MQTT topic, it will be received in its subscribers’ function  callback. This order will be then published to the custom topic /2437/incomingorders/ .</p>
+</li>
+<li><p class="first">Second task of this action server is to send data to the spreadsheet. The action client will send goal with protocol “google-apps” and mode “push” to push the data to required spreadsheet. The goal will be processed in function process_goal_1. The function called to send data to spreadsheet is iot.to_spreadsheet(url,data) which resides in iot module inside pyiot folder.</p>
+<dl class="docutils">
+<dt><strong>task5_solution.py ( node_task5_solution)</strong></dt>
+<dd><ul class="first last simple">
+<li>This node will first subscribe to the topic /eyrc/vb/camera_1/image_raw to get the image stream. A new of object of class Camera1 (c_1) is created to handle the task of image processing. Once the image is received it will be cropped into 12 parts , each part having one packages’ QR code. After cleaning the image (adding contrast and reducing noise in the image) the QR code will be decoded. On the basis of the result(color) the priority will be assigned and the package will be appended into the colors dictionary (The colors dictionary is having the key as the package name and value as its item type.) At the same time the data regarding each decoded package will be sent to the inventory spreadsheet as a goal to action server via action_client.</li>
+<li>This node has also subscribed to the topic /2437/incomingoreders/ (custom topic). As the message regarding the package is being published on this topic the function callback of this subscription will append the order according to its priority in its respective list (queue).</li>
+<li><dl class="first docutils">
+<dt>Once the packages on the shelf are decoded, this node will start two different threads :</dt>
+<dd><ol class="first last arabic">
+<li>t1 = process_ur5_1</li>
+<li>t2 = process_ur5_2</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Both the threads will run simultaneously to reduce the simulation time.</li>
+<li><dl class="first docutils">
+<dt><strong>process_ur5_1()</strong>  :</dt>
+<dd><ul class="first last">
+<li>The process_ur5_1 starts by first setting the ur51 arm to its home position</li>
+<li>After the order is received by the get_order() function ,  get_row_col() function will be called. It will scan whole colors dictionary to get the package name which has item type equivalent to the current_orders’ item type. Once the package name is found , its row number and column number is extracted and that package is removed from the colors dictionary. Row, Column number and updated colors dictionary is returned.</li>
+<li>The waypoints list is containing the number of saved trajectories for the package at its indexes. The gripper list is containing the number of the saved trajectory after which the gripper is to be activated when executing the saved trajectories for a particular package.</li>
+<li>After getting the row and column no. of required package, its saved trajectories are executed and once the ur51 places order on the conveyor it will send goal to action server to send data to spreadsheet “DispatchedOrders” and “Dashboard”. At the same time DISPATCHED_ORDER list will be appended by this order.</li>
+<li>But before placing the order on the conveyor, ur51 will check the CONVEYOR_FLAG status which means if the any previous package that is currently present on the conveyor is being picked by ur52 or not. If not, then it will wait for ur52 to pick that package and then it will place this package on conveyor and then start the conveyor. If previous package is not present on the conveyor, then it will simply place the package and start the conveyor.</li>
+<li>This whole process will run repeatedly for each package which is present in the priority queue.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>process_ur5_2()</strong> :</dt>
+<dd><ul class="first last">
+<li>The process_ur5_2 will start by first setting the ur52 arm to its home position.</li>
+<li>Once the package is below the logical_camera_2 the conveyor will stop and ur52 will pick the package.</li>
+<li>On the basis of the order present at the 0th index of the DISPATCHED_ORDER list, it will be popped out and stored in variable current_order. The current_order priority will decide the bin color and ur52 will set its angle to go to that particular bin.</li>
+<li>Once the package is dropped by ur52, action_client will send goal to action server to send data to spreadsheet “ShippedOrders” and “Dashboard”</li>
+<li>This process will run repeatedly for each package which is detected by the logical_camera_2.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="msg-files-used">
+<h1>MSG files used<a class="headerlink" href="#msg-files-used" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first"><strong>order.msg</strong></p>
+<blockquote>
+<div><p>This msg file is being used by the topic /2437/incomingorders/ .
+It contains following feilds –</p>
+<ol class="arabic simple">
+<li>string order_id = The order_id of the item is stored in this</li>
+<li>string city = The city from where order is generated is stored is this</li>
+<li>string item = The type of the item specified in the order</li>
+<li>string qty = The quantity of the item</li>
+<li>string latitude = The latitude of the location where order needs to be delieverd</li>
+<li>string longitude = The longitude of the location where order needs to be delievered</li>
+<li>string priority = The priority of the order whehter it is HP/MP/LP</li>
+<li>string order_time = The time at which order was placed</li>
+<li>int32  cost = The cost of the order item.</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center">
+<img alt="_images/order_msg.png" src="_images/order_msg.png" />
+</div>
+<ol class="arabic" start="2">
+<li><p class="first"><strong>msgMqttSub.msg</strong></p>
+<p>This msg file will be used by the topic “ /ros_iot_bridge/mqtt/sub” . It contains following feilds:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>time timestamp  = timestamp</li>
+<li>string topic = Subscription MQTT topic name</li>
+<li>string message = incoming message from MQTT subscription</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="yaml-files-used">
+<h1>YAML files used<a class="headerlink" href="#yaml-files-used" title="Permalink to this headline">¶</a></h1>
+<p>ROS build will create Python Dictionary called as config_pyiot.
+This dictionary will have two keys :</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first"><strong>mqtt</strong> – The value of this key contains of a dictonary that contains 6 keys:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>server_url</strong> = The value stored in this key is the MQTT server url</li>
+<li><strong>server_port</strong> = by default it is 1883 for mqtt protocol</li>
+<li><strong>topic_sub</strong> = the value of this key is the topic that action server will subscribe to get messages published on MQTT.</li>
+<li><strong>topic_pub</strong> = the value of this key is the topic on which action server will publish messages. MQTT should subscribe to this topic.</li>
+<li><strong>qos</strong> = the value of this key is set to 0 which means that publication is sent but there is no confirmation about it.</li>
+<li><strong>sub_cb_ros_topic</strong> = the value of this key is a topic on which  ROS nodes can listed to receive data from MQTT Subscription</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>google_apps</strong> – The value of this key contains a dictionary which has 2 keys :</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>spread_sheet</strong> = the value of this key the spreadsheet url that is being used by the team for implementation</li>
+<li><strong>submission_spread_sheet</strong> = the  value of this key is the spreadsheet url of eyantra on which submission is done.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p>In the task5_solution.launch file we have used rospy to get parameters stored in this config_pyiot dictionary.</p>
+<div class="figure align-center">
+<img alt="_images/config_pyiot.png" src="_images/config_pyiot.png" />
+</div>
+</div>
+<div class="section" id="action-files-used">
+<h1>Action files used<a class="headerlink" href="#action-files-used" title="Permalink to this headline">¶</a></h1>
+<p><strong>msgRosIot.action</strong></p>
+<blockquote>
+<div><blockquote>
+<div>This action file will be used by the action client to send goals to the action server. The same action file can be used to give reslut and feedback to action client.</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong>#goal</strong></dt>
+<dd><ul class="first last">
+<li>string protocol = This is the protocol on which message is to be sent</li>
+<li>string mode = The mode whether it is pub/sub for MQTT and push for googl_apps</li>
+<li>string topic = The topic on which the message is to be published/subscribed (MQTT)</li>
+<li>string message = The message that needs to be processed</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#result</strong></dt>
+<dd><ul class="first last">
+<li>bool flag_success = Either True – If goal is processed successfully / False – If goal is not processed</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#feedback</strong></dt>
+<dd><ul class="first last">
+<li>int8 percentage_complete = The percentage of goal processing</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/action.png" src="_images/action.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="next chapter">scripts</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="scripts"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">task5  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, dkf.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
